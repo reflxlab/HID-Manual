@@ -1,0 +1,49 @@
+.course-checklist {
+  margin: 1rem 0 2rem;
+  padding: 0;
+}
+
+.course-progress {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.course-progress__segment {
+  flex: 1;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--md-default-fg-color--lighter);
+}
+
+.course-progress__segment.is-complete {
+  background: #2e7d32;
+}
+
+.course-checklist ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-checklist li {
+  margin: 0.55rem 0;
+}
+
+.course-checklist label {
+  display: grid;
+  grid-template-columns: 1.1rem minmax(0, 1fr);
+  column-gap: 0.55rem;
+  align-items: start;
+}
+
+.course-checklist input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.15rem 0 0;
+  accent-color: #2e7d32;
+}
+
+.course-checklist input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+}

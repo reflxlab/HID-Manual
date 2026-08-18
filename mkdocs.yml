@@ -1,0 +1,90 @@
+site_name: HID-Interface-Anleitung
+site_description: Interaktiver Programmierkurs mit Qwiic Pro Micro
+
+theme:
+  name: material
+  language: de
+  features:
+    - navigation.instant        # Blitzschneller Seitenwechsel ohne Neuladen
+    - navigation.tracking       # Passt die URL beim Scrollen an
+    - navigation.top            # Fügt einen "Nach oben"-Button hinzu
+    - content.code.copy         # Fügt den Copy-Button bei Codeblöcken ein!
+    - header.autohide           # Versteckt die Navigationsleiste beim Scrollen nach unten
+  palette:
+    # Farbschema für Tag-Modus (Arduino Teal & Orange)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal            # Typisches Arduino-Türkis
+      accent: deep orange      # Arduino-Orange für Links & Highlights
+      toggle:
+        icon: material/brightness-7
+        name: Zum dunklen Modus wechseln
+
+    # Farbschema für Nacht-Modus
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Zum hellen Modus wechseln
+
+# Hier bindest du deine eigene CSS-Datei ein (optional)
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/progress-checklist.js
+
+# Deine Navigation
+nav:
+  - 🏠 Start: index.md
+  - 🚀 Erste Schritte:
+      - Was ist Arduino?: erste-schritte/was-ist-arduino.md
+      - Arduino IDE einrichten: erste-schritte/ide-einrichten.md
+      - setup() und loop(): erste-schritte/setup-loop.md
+      - Erster Sketch: erste-schritte/erster-sketch.md
+      - Library installieren: erste-schritte/installLibrary.md
+  - 🧩 Bauteile:
+      - 🔘 Taster: bauteile/taster.md
+      - 🎚️ Potentiometer: bauteile/poti.md
+      - 💡 LED: bauteile/led.md
+      - 📊 LED-Bar: bauteile/led-bar.md
+      - 🖥️ LCD: bauteile/lcd.md
+      - 👆 Drucksensor: bauteile/drucksensor.md
+      - 🌟 Lichtsensor: bauteile/lichtsensor.md
+      - 🖱️ HID Steuerungen: bauteile/hid.md
+  - 💻 Programmieren:
+      - Variablen: programmieren/variablen.md
+      - Entscheidungen und Schleifen: programmieren/if-else.md
+      - Funktionen: programmieren/funktionen.md
+      - digitalRead(): programmieren/digitalread.md
+      - analogRead(): programmieren/analogread.md
+      - delay(): programmieren/delay.md
+  - 🎮 Projekte:
+      - Projektverzeichnis: projekte/projektverzeichniss.md
+      - Lautstärkeregler: projekte/lautstaerke.md
+      - Play/Pause-Taster: projekte/play-pause.md
+      - PC-Makropad: projekte/makropad.md
+      - LED-Lautstärkeanzeige: projekte/led-anzeige.md
+      - Mini-Gamecontroller: projekte/gamecontroller.md
+
+markdown_extensions:
+  - attr_list                   # Erlaubt Attribute wie { width="300" } bei Bildern & Elements
+  - admonition                  # Aktiviert die farbigen Info-Boxen (!!! tip, !!! warning, etc.)
+  - pymdownx.details            # Erlaubt einklappbare Boxen (??? tip)
+  - pymdownx.tabbed:            # Interaktive Tabs / Reiter
+      alternate_style: true
+  - pymdownx.superfences        # Code-Highlighting & Mermaid
+  - pymdownx.highlight:         # Syntax-Highlighting für Arduino/C++ Code
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys               # Zeigt Tasten wie <kbd>Strg</kbd> schön an
+  - pymdownx.tasklist:          # Checkboxen [-] [x]
+      custom_checkbox: true
+  - pymdownx.mark               # Gelber Textmarker ==Text==
+  - pymdownx.tilde              # Durchstreichen ~~Text~~
+  - pymdownx.snippets           # Code-Schnipsel einbinden
+  - footnotes                   # Fußnoten
