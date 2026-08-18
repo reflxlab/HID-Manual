@@ -10,7 +10,7 @@ In diesem Beispiel steuern zwei Taster die Lautstärke des Computers: Einer mach
 
 Für die HID-Funktionen wird die Library **HID-Project** von NicoHood benötigt.
 
-Folge der [Anleitung](\erste-schritte\installLibrary) und installiere die **HID-Project** Library.
+Folge der [Anleitung](../erste-schritte/installLibrary.md) und installiere die **HID-Project** Library.
 
 !!! info "HID-Code vorsichtig testen"
 

@@ -4,12 +4,23 @@ site_description: Interaktiver Programmierkurs mit Qwiic Pro Micro
 theme:
   name: material
   language: de
+  favicon: images/favicon.svg
+  icon:
+    logo: material/memory
   features:
     - navigation.instant        # Blitzschneller Seitenwechsel ohne Neuladen
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.footer
     - navigation.tracking       # Passt die URL beim Scrollen an
     - navigation.top            # Fügt einen "Nach oben"-Button hinzu
+    - toc.follow
+    - search.suggest
+    - search.highlight
     - content.code.copy         # Fügt den Copy-Button bei Codeblöcken ein!
-    - header.autohide           # Versteckt die Navigationsleiste beim Scrollen nach unten
+    - content.code.select
   palette:
     # Farbschema für Tag-Modus (Arduino Teal & Orange)
     - media: "(prefers-color-scheme: light)"
@@ -35,6 +46,11 @@ extra_css:
 
 extra_javascript:
   - javascripts/progress-checklist.js
+
+extra:
+  generator: false
+
+copyright: Interaktiver Arduino-Kurs · Qwiic Pro Micro
 
 # Deine Navigation
 nav:

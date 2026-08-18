@@ -13,12 +13,12 @@ https://raw.githubusercontent.com/sparkfun/Arduino_Boards/main/IDE_Board_Manager
 Drücke dannach `OK`.
 4. Öffne den **Boardverwalter** auf der linken Seitenleiste, suche nach `SparkFun AVR Boards` und installiere das Paket.
 5. Wähle unter **Werkzeuge → Board → Sparkfun AVR Boards** den Eintrag **Sparkfun Pro Micro**.  
-![BoardTypeSelection](/images/boardTypeSelection.png){width="65%"}
+![Auswahl des Board-Typs](../images/boardTypeSelection.png){width="65%"}
 6. Wähle unter **Werkzeuge → Processor** Variante **ATmega32U4, 5 V, 16 MHz**.  
-![ProcessorSelection](/images/ProcessorSelection.png){width="60%"}
+![Auswahl des Prozessors](../images/ProcessorSelection.png){width="60%"}
 7. Wähle den richtigen Com-Port in der Boarauswahl aus.  
 Diesen findes du heraus indem du das Board ein, und dann wieder aus steckst. Dieser Port der neu in der Liste erscheint ist der richtige.  
-![BoardSelection|321](/images/boardSelection.png){width="30%"}  
+![Auswahl des angeschlossenen Boards](../images/boardSelection.png){width="30%"}  
 Drücke dannach im Pop-Up-Fenster **OK**.
 
 

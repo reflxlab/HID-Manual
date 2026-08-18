@@ -9,7 +9,7 @@ Libraries erweitern die Arduino IDE um zusätzliche Funktionen. Sie werden zum B
 2. Öffne auf der linken Seitenleiste den **Bibliotheksverwalter**.
 
 3. Suche oben im Suchfeld nach dem Namen der gewünschten Library.  
-   ![BoardTypeSelection](/images/librarySearch.png){width="65%"}
+   ![Suche nach einer Library](../images/librarySearch.png){width="65%"}
    
 4. Wähle die passende Library aus der Ergebnisliste aus.
 
