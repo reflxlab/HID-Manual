@@ -113,7 +113,7 @@ hide:
     <header class="home-section__header">
       <p class="home-section__number">02 · Bauteile</p>
       <h2 id="bauteile-title">Wähle dein nächstes Experiment</h2>
-      <p>Starte passend zu deiner Erfahrung. Jede Anleitung enthält einen kurzen Beispielcode und eine Zusatzaufgabe.</p>
+      <p>Starte mit einem Bauteil, welches dich interessiert. Du must nicht zwingend auf die Schwierigkeit achten. Jede Anleitung enthält einen kurzen Beispielcode und eine Zusatzaufgabe.</p>
     </header>
 
     <div class="difficulty-grid">
