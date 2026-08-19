@@ -28,11 +28,9 @@ void loop() {
   delay(pause);
 }
 ```
-
-## Code-Erklärung
-
-- `ledPin` bleibt immer `9` und wird deshalb als `const` definiert.
-- `pause` kann später verändert werden.
-- `ledAn` speichert nur `true` oder `false`.
-- Das Ausrufezeichen in `!ledAn` kehrt den Wahrheitswert um.
-- Mit jedem Durchlauf wechselt die LED dadurch ihren Zustand.
+??? info "Code-Erklärung"
+    - `ledPin` bleibt immer `9` und wird deshalb als `const` definiert.
+    - `pause` kann später verändert werden.
+    - `ledAn` speichert nur `true` oder `false`.
+    - Das Ausrufezeichen in `!ledAn` kehrt den Wahrheitswert um.
+    - Mit jedem Durchlauf wechselt die LED dadurch ihren Zustand.

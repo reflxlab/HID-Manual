@@ -58,7 +58,6 @@ void loop() {
 
     `HIGH` schaltet den Pin ein, dadurch leuchtet die LED. Nach einer Sekunde schaltet `LOW` den Pin aus. `1000` Millisekunden entsprechen einer Sekunde.
 
----
 
 !!! note "Zusatzaufgabe"
 

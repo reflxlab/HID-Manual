@@ -25,10 +25,9 @@ void loop() {
 }
 ```
 
-## Code-Erklärung
-
-- Vor dem Lesen muss der Pin in `setup()` als Eingang eingerichtet werden.
-- Durch `INPUT_PULLUP` ist der ungedrückte Zustand `HIGH`.
-- `digitalRead(buttonPin)` liest den Zustand genau in diesem Moment.
-- Der serielle Monitor macht einen unsichtbaren elektrischen Zustand sichtbar.
+??? info "Code-Erklärung"
+    - Vor dem Lesen muss der Pin in `setup()` als Eingang eingerichtet werden.
+    - Durch `INPUT_PULLUP` ist der ungedrückte Zustand `HIGH`.
+    - `digitalRead(buttonPin)` liest den Zustand genau in diesem Moment.
+    - Der serielle Monitor macht einen unsichtbaren elektrischen Zustand sichtbar.
 

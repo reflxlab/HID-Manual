@@ -254,19 +254,6 @@ void loop() {
 
     Deshalb muss in der `loop()`-Funktion nichts wiederholt werden.
 
----
-
-!!! info "Aufgabe"
-
-    Verändere die Farben der drei Bereiche.
-
-    Suche dafür im Programm nach `ledBar.Color()` und passe die RGB-Werte an.
-
-    Versuche zum Beispiel folgende Aufteilung:
-
-    - LEDs 1 bis 4 → Blau
-    - LEDs 5 und 6 → Violett
-    - LEDs 7 und 8 → Weiss
 
 !!! note "Zusatzaufgabe"
 

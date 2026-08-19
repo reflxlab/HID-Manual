@@ -110,7 +110,6 @@ void loop() {
 
     Wartet `100` Millisekunden bis zur nächsten Messung.
 
----
 
 !!! note "Zusatzaufgabe"
 

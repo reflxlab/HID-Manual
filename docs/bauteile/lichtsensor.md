@@ -82,7 +82,6 @@ void loop() {
 
     Die Pause verhindert, dass der serielle Monitor mit zu vielen Werten gleichzeitig gefüllt wird.
 
----
 
 !!! note "Zusatzaufgabe"
 

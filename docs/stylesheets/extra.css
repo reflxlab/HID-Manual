@@ -481,18 +481,22 @@ body {
   perspective: 60rem;
 }
 
-.code-window {
+.code-window-group {
   position: absolute;
   top: 2rem;
   right: 0;
   left: 0;
+  animation: course-float 6s ease-in-out infinite;
+  transform: rotateY(-7deg) rotateX(2deg);
+}
+
+.code-window {
+  position: relative;
   overflow: hidden;
   border: 1px solid rgb(255 255 255 / 14%);
   border-radius: 1.1rem;
   background: var(--course-code-bg);
   box-shadow: 0 2rem 4rem rgb(0 31 33 / 35%);
-  transform: rotateY(-7deg) rotateX(2deg);
-  animation: course-float 6s ease-in-out infinite;
 }
 
 .code-window__bar {
@@ -581,7 +585,7 @@ body {
 }
 
 .signal-chip--usb {
-  top: 0;
+  top: -1.25rem;
   right: -0.5rem;
 }
 

@@ -24,10 +24,8 @@ void loop() {
   delay(100);
 }
 ```
-
-## Code-Erklärung
-
-- `rohwert` enthält die unveränderte Messung.
-- `map()` rechnet den Zahlenbereich in einen leichter verständlichen Prozentbereich um.
-- `analogRead()` bedeutet nicht automatisch, dass eine physikalische Grösse wie Kraft oder Temperatur bekannt ist.
-- Für echte Einheiten braucht ein Sensor eine passende Formel oder Kalibrierung.
+??? info "Code-Erklärung"
+    - `rohwert` enthält die unveränderte Messung.
+    - `map()` rechnet den Zahlenbereich in einen leichter verständlichen Prozentbereich um.
+    - `analogRead()` bedeutet nicht automatisch, dass eine physikalische Grösse wie Kraft oder Temperatur bekannt ist.
+    - Für echte Einheiten braucht ein Sensor eine passende Formel oder Kalibrierung.

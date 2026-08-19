@@ -113,7 +113,6 @@ void loop() {
 
     Dieser Block funktioniert gleich wie der Lauter-Block, sendet aber mit `MEDIA_VOLUME_DOWN` einen Schritt leiser.
 
----
 
 !!! note "Zusatzaufgabe"
 

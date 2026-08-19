@@ -133,7 +133,6 @@ void loop() {
 
     Wartet `250` Millisekunden bis zur nächsten Aktualisierung.
 
----
 
 !!! note "Zusatzaufgabe"
 

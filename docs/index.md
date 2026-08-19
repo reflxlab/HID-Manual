@@ -24,19 +24,21 @@ hide:
     </div>
 
     <div class="home-hero__visual" aria-hidden="true">
-      <div class="code-window">
-        <div class="code-window__bar">
-          <span></span><span></span><span></span>
-          <small>interface.ino</small>
-        </div>
-        <pre><code><span class="code-keyword">void</span> <span class="code-function">loop</span>() {
+      <div class="code-window-group">
+        <div class="code-window">
+          <div class="code-window__bar">
+            <span></span><span></span><span></span>
+            <small>interface.ino</small>
+          </div>
+          <pre><code><span class="code-keyword">void</span> <span class="code-function">loop</span>() {
   <span class="code-keyword">if</span> (tasteGedrueckt) {
     <span class="code-function">digitalWrite</span>(LED, HIGH);
     <span class="code-function">sendeHID</span>();
   }
 }</code></pre>
+        </div>
+        <span class="signal-chip signal-chip--usb">USB HID</span>
       </div>
-      <span class="signal-chip signal-chip--usb">USB HID</span>
       <span class="signal-chip signal-chip--ready"><i></i> Bereit</span>
     </div>
   </section>

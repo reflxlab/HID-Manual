@@ -24,10 +24,9 @@ void blinke(int anZeit, int ausZeit) {
 }
 ```
 
-## Code-Erklärung
-
-- Die eigene Funktion heisst `blinke`.
-- `anZeit` und `ausZeit` sind Parameter. Beim Aufruf werden dafür konkrete Zahlen eingesetzt.
-- `blinke(100, 100)` erzeugt einen kurzen Blitz.
-- `blinke(500, 1000)` erzeugt ein längeres Leuchten mit längerer Pause.
-- `void` bedeutet, dass die Funktion keinen Wert zurückgibt.
+??? info "Code-Erklärung"
+    - Die eigene Funktion heisst `blinke`.
+    - `anZeit` und `ausZeit` sind Parameter. Beim Aufruf werden dafür konkrete Zahlen eingesetzt.
+    - `blinke(100, 100)` erzeugt einen kurzen Blitz.
+    - `blinke(500, 1000)` erzeugt ein längeres Leuchten mit längerer Pause.
+    - `void` bedeutet, dass die Funktion keinen Wert zurückgibt.

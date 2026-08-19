@@ -20,12 +20,11 @@ void loop() {
 }
 ```
 
-## Code-Erklärung
-
-- `delay(100)` wartet 0,1 Sekunden.
-- `delay(900)` wartet 0,9 Sekunden.
-- Ein kompletter Durchlauf dauert ungefähr eine Sekunde.
-- Während einer langen `delay()`-Pause reagiert der Sketch nicht sofort auf einen Taster.
+??? info "Code-Erklärung"
+    - `delay(100)` wartet 0,1 Sekunden.
+    - `delay(900)` wartet 0,9 Sekunden.
+    - Ein kompletter Durchlauf dauert ungefähr eine Sekunde.
+    - Während einer langen `delay()`-Pause reagiert der Sketch nicht sofort auf einen Taster.
 
 !!! note "Für später"
     In grösseren Projekten wird oft mit `millis()` statt mit langen `delay()`-Pausen gearbeitet. So kann das Board während des Wartens weitere Aufgaben erledigen.

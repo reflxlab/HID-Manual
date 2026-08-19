@@ -67,7 +67,6 @@ void loop() {
 
     `digitalRead()` liest den Taster. Ist er gedrückt, wird die LED mit `HIGH` eingeschaltet. In allen anderen Fällen schaltet `else` die LED mit `LOW` aus.
 
----
 
 !!! info "Aufgabe"
 

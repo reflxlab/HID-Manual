@@ -75,8 +75,6 @@ void loop() {
 
     Die Pause verhindert, dass der serielle Monitor mit zu vielen Werten gefüllt wird.
 
----
-
 !!! note "Zusatzaufgabe"
 
     Ändere die `map()`-Zeile so, dass statt Prozent ein Bereich von `0` bis `255` ausgegeben wird. Dieser Bereich wird zum Beispiel für `analogWrite()` verwendet.
