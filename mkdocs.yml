@@ -17,7 +17,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy         # Fügt den Copy-Button bei Codeblöcken ein!
-    - content.code.select
   palette:
     # Farbschema für Tag-Modus (Arduino Teal & Orange)
     - media: "(prefers-color-scheme: light)"

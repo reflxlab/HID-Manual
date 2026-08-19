@@ -439,12 +439,15 @@ body {
 .home-stats {
   display: flex;
   gap: clamp(1rem, 4vw, 2.4rem);
-  margin: 2.4rem 0 0;
+  margin:  0 0;
 }
 
 .home-stats div {
   position: relative;
-  min-width: 4.7rem;
+  display: flex;
+  gap: 0.3rem;
+  align-items: flex-end;
+  min-width: 0;
 }
 
 .home-stats div + div::before {
@@ -465,7 +468,8 @@ body {
 }
 
 .home-stats dd {
-  margin: 0.35rem 0 0;
+  margin: 0 0 0.1rem !important;
+  margin-inline-start: 0 !important;
   color: rgb(255 255 255 / 67%);
   font-size: 0.72rem;
   font-weight: 650;
@@ -537,6 +541,20 @@ body {
   border: 0;
   background: transparent;
   color: inherit;
+}
+
+/* Das Hero-Codefenster ist rein dekorativ und braucht keine Code-Werkzeuge. */
+.code-window .md-clipboard,
+.code-window .md-code__nav {
+  display: none !important;
+}
+
+/* Das helle Material-Schema setzt fuer <pre> eine helle Flaeche.
+   Im Hero bleibt das Codefenster bewusst dunkel, damit der Code lesbar ist. */
+[data-md-color-scheme="default"] .md-typeset .code-window pre,
+[data-md-color-scheme="default"] .md-typeset .code-window pre > code {
+  background: var(--course-code-bg) !important;
+  color: #d9f5f0 !important;
 }
 
 .code-keyword {

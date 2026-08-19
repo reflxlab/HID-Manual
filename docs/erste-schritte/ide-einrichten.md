@@ -4,7 +4,7 @@ Mit der Arduino IDE schreibst und überträgst du deine Programme. Für das Qwii
 
 ## Einrichtung
 
-1. Öffne die Arduino IDE auf deinem PC.
+1. Öffne die Arduino IDE auf deinem PC. Falls du die IDE zu Hause noch installieren möchtest, kannst du das unter diesem [Link](https://www.arduino.cc/en/software/){ target="_blank" } machen.
 2. Öffne **Datei → Einstellungen**.
 3. Ergänze bei **Zusätzliche Boardverwalter-URLs** diese Adresse:  
 ```
