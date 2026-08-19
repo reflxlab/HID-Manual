@@ -10,9 +10,6 @@ theme:
   features:
     - navigation.instant        # Blitzschneller Seitenwechsel ohne Neuladen
     - navigation.instant.progress
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
     - navigation.footer
     - navigation.tracking       # Passt die URL beim Scrollen an
     - navigation.top            # Fügt einen "Nach oben"-Button hinzu
@@ -46,6 +43,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/progress-checklist.js
+  - javascripts/navigation-accordion-v2.js
 
 extra:
   generator: false
@@ -54,7 +52,7 @@ copyright: Interaktiver Arduino-Kurs · Qwiic Pro Micro
 
 # Deine Navigation
 nav:
-  - 🏠 Start: index.md
+  - ✔️ Checkliste: index.md
   - 🚀 Erste Schritte:
       - Was ist Arduino?: erste-schritte/was-ist-arduino.md
       - Arduino IDE einrichten: erste-schritte/ide-einrichten.md

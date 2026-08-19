@@ -80,7 +80,7 @@ hide:
         <li>
           <input id="course-step-erster-sketch" type="checkbox" data-step="erster-sketch">
           <div class="course-checklist__copy">
-            <label for="course-step-erster-sketch"><small>Schritt 2</small><strong>Ersten Sketch laden</strong><span>Übertrage dein erstes kleines Programm auf den Mikrocontroller.</span></label>
+            <label for="course-step-erster-sketch"><small>Schritt 2</small><strong>Ersten Sketch laden</strong><span>Übertrage dein erstes kleines Programm auf den Mikrocontroller. Zeige uns dein Ergebniss, wenn du ferig bist.</span></label>
             <a href="erste-schritte/erster-sketch/">Anleitung öffnen <span aria-hidden="true">→</span></a>
           </div>
         </li>
@@ -94,14 +94,14 @@ hide:
         <li>
           <input id="course-step-bauteil" type="checkbox" data-step="bauteil">
           <div class="course-checklist__copy">
-            <label for="course-step-bauteil"><small>Schritt 4</small><strong>Ein Bauteil ausprobieren</strong><span>Wähle unten ein Bauteil, teste den Beispielcode und löse die Zusatzaufgabe.</span></label>
+            <label for="course-step-bauteil"><small>Schritt 4</small><strong>Ein Bauteil ausprobieren</strong><span>Wähle unten ein Bauteil, teste den Beispielcode und löse die Zusatzaufgabe. Präsentier uns deine Lösung am Ende.</span></label>
             <a href="#bauteile">Bauteil auswählen <span aria-hidden="true">↓</span></a>
           </div>
         </li>
         <li>
           <input id="course-step-projekt" type="checkbox" data-step="projekt">
           <div class="course-checklist__copy">
-            <label for="course-step-projekt"><small>Schritt 5</small><strong>Eigenes Projekt starten</strong><span>Verbinde einen Sensor mit einem Aktor oder setze eine Projektidee um. Erkläre vor dem Start kurz, was du vorhast.</span></label>
+            <label for="course-step-projekt"><small>Schritt 5</small><strong>Eigenes Projekt starten</strong><span>Verbinde einen Sensor mit einem Aktor oder setze eine Projektidee um. Erkläre uns vor dem Start kurz, was du vorhast.</span></label>
             <a href="projekte/projektverzeichniss/">Projekte ansehen <span aria-hidden="true">→</span></a>
           </div>
         </li>
