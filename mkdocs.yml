@@ -44,6 +44,7 @@ extra_javascript:
   - javascripts/progress-checklist.js
   - javascripts/navigation-accordion-v2.js
   - javascripts/checklist-return-button.js
+  - javascripts/learning-companion.js
 
 extra:
   generator: false

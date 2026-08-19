@@ -220,6 +220,86 @@ body {
   color: var(--md-primary-fg-color);
 }
 
+/* Rechter Lernbegleiter */
+.md-sidebar--secondary .md-nav--secondary {
+  display: none;
+}
+
+.course-companion {
+  margin: 0.7rem 0 1rem;
+  padding: 1rem;
+  border: 1px solid var(--course-border);
+  border-radius: var(--course-radius-md);
+  background:
+    radial-gradient(circle at 100% 0, rgb(20 166 170 / 14%), transparent 7rem),
+    var(--course-surface-raised);
+  box-shadow: var(--course-shadow-sm);
+}
+
+.course-companion__eyebrow {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--md-primary-fg-color);
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.course-companion__title {
+  display: block;
+  color: var(--course-text);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.course-companion__copy {
+  margin: 0.45rem 0 0;
+  color: var(--course-muted);
+  font-size: 0.65rem;
+  line-height: 1.55;
+}
+
+.course-companion__meter {
+  height: 0.42rem;
+  margin: 0.9rem 0 0.45rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--course-border);
+}
+
+.course-companion__meter > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--course-teal-700), var(--course-teal-500));
+  transition: width 240ms ease;
+}
+
+.course-companion__status {
+  display: block;
+  color: var(--course-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.course-companion__link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.95rem;
+  color: var(--md-primary-fg-color);
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.course-companion__link:hover {
+  color: var(--md-accent-fg-color);
+}
+}
+
 /* Rücksprung zur Checkliste */
 .checklist-return-button {
   position: fixed;
