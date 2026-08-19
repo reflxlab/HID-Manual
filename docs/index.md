@@ -45,7 +45,7 @@ hide:
     <header class="home-section__header">
       <p class="home-section__number">01 · Dein Weg</p>
       <h2 id="lernweg-title">Vom ersten Sketch zum eigenen Projekt</h2>
-      <p>Arbeite die Schritte in deinem Tempo durch. Dein Fortschritt bleibt in diesem Browser gespeichert.</p>
+      <p>Arbeite die Schritte in deinem Tempo durch. Du kannst uns jederzeit fragen. Keine Angst, du kannst nichts kaputt machen mit deinem Code 😊</p>
     </header>
 
     <div class="course-checklist" data-checklist-id="dein-weg" aria-label="Dein Lernfortschritt">
