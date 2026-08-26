@@ -2,12 +2,6 @@
 
 Ein Potentiometer ist ein verstellbarer Spannungsteiler. Beim Drehen verändert sich die gemessene Spannung, die der Arduino als Zahl einlesen kann.
 
-!!! info "Anschluss am Nano R4"
-
-    Verbinde die beiden äusseren Anschlüsse des Potentiometers mit **5V** und **GND** des Nano R4. Der mittlere Anschluss kommt an **A0**. An einem Analogeingang darf die Spannung nicht höher als 5 V werden.
-
----
-
 ## Beispielcode
 
 In diesem Beispiel wird der Messwert des Potentiometers von `0` bis `1023` mit `map()` in Prozent von `0` bis `100` umgerechnet und im seriellen Monitor ausgegeben.

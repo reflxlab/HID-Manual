@@ -1,6 +1,6 @@
 # 💡 LED
 
-Eine LED wandelt elektrischen Strom in Licht um. Verbinde **D9 → 470-Ω-Widerstand → LED → GND**. Der Vorwiderstand hält den Strom unter dem Grenzwert von 8 mA pro Nano-R4-Pin.
+Eine LED wandelt elektrischen Strom in Licht um. Sie kann über einen digitalen Ausgang ein- und ausgeschaltet werden.
 
 ---
 

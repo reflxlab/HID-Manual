@@ -1,89 +1,84 @@
 # 🖱️ HID-Steuerungen
 
-HID steht für **Human Interface Device**. Der Arduino Nano R4 kann sich über seine native USB-C-Verbindung als Tastatur oder Maus am Computer anmelden. Die dafür benötigten Bibliotheken `Keyboard` und `Mouse` sind bereits im Boardpaket **Arduino UNO R4 Boards** enthalten.
+HID steht für **Human Interface Device**. Der Arduino Nano R4 kann sich über USB-C als Mediensteuerung am Computer anmelden. In diesem Beispiel steuern zwei Taster die Systemlautstärke: einer macht lauter, der andere leiser.
 
-In diesem ersten Beispiel schreibt ein Taster einmal den Buchstaben `x`. So lernst du die HID-Funktion kennen, bevor du vollständige Makros oder Mediensteuerungen baust.
 
-!!! info "HID-Code vorsichtig testen"
+## Benötigte Library installieren
 
-    Öffne vor dem Test ein leeres Textdokument und speichere deine Arbeit in anderen Programmen. Ein fehlerhafter Sketch kann sehr viele Eingaben senden. Ziehe im Notfall das USB-Kabel ab.
+Für die Ansteuerung des LCDs wird eine **ConsumerKeyboard** Library benötigt.
+
+Folge der [Anleitung](../erste-schritte/installLibrary.md) und installiere die für das verwendete Display passende **ConsumerKeyboard** Library.
 
 ---
 
-## Aufbau
-
-Schliesse einen Taster zwischen **D4** und **GND** an. Der interne Pull-up-Widerstand des Nano R4 sorgt dafür, dass kein zusätzlicher Widerstand nötig ist.
 
 ## Beispielcode
 
 ```cpp
-#include <Keyboard.h>
+#include <ConsumerKeyboard.h>
 
-const int buttonPin = 4;
-bool vorher = HIGH;
+const int lauterPin = 4;
+const int leiserPin = 5;
 
 void setup() {
-  pinMode(buttonPin, INPUT_PULLUP);
-
-  delay(3000);
-  Keyboard.begin();
+  pinMode(lauterPin, INPUT_PULLUP);
+  pinMode(leiserPin, INPUT_PULLUP);
 }
 
 void loop() {
-  bool jetzt = digitalRead(buttonPin);
-
-  if (jetzt == LOW && vorher == HIGH) {
-    Keyboard.write('x');
+  if (digitalRead(lauterPin) == LOW) {
+    ConsumerKeyboard.press(KEY_VOLUME_INCREMENT);
+    ConsumerKeyboard.release();
   }
 
-  vorher = jetzt;
-  delay(20);
+  if (digitalRead(leiserPin) == LOW) {
+    ConsumerKeyboard.press(KEY_VOLUME_DECREMENT);
+    ConsumerKeyboard.release();
+  }
 }
 ```
 
 ??? info "Code-Erklärung"
 
-    ### Eingebaute Tastatur-Bibliothek einbinden
+    ### Consumer-Keyboard-Bibliothek einbinden
 
     ```cpp
-    #include <Keyboard.h>
+    #include <ConsumerKeyboard.h>
     ```
 
-    `Keyboard.h` gehört zum offiziellen Nano-R4-Boardpaket. Es muss keine zusätzliche HID-Library installiert werden.
+    `ConsumerKeyboard.h` stellt Medienbefehle wie Lauter, Leiser und Stumm bereit.
 
     ---
 
-    ### Taster vorbereiten
+    ### Eingänge vorbereiten
 
     ```cpp
-    pinMode(buttonPin, INPUT_PULLUP);
+    pinMode(lauterPin, INPUT_PULLUP);
+    pinMode(leiserPin, INPUT_PULLUP);
     ```
 
-    `INPUT_PULLUP` aktiviert den internen Pull-up-Widerstand. Deshalb gilt: **gedrückt = `LOW`**, **losgelassen = `HIGH`**.
+    `INPUT_PULLUP` aktiviert die internen Pull-up-Widerstände. Deshalb gilt im Sketch: **gedrückt = `LOW`** und **losgelassen = `HIGH`**.
 
     ---
 
-    ### HID sicher starten
+    ### Lautstärke steuern
 
     ```cpp
-    delay(3000);
-    Keyboard.begin();
-    ```
+    if (digitalRead(lauterPin) == LOW) {
+      ConsumerKeyboard.press(KEY_VOLUME_INCREMENT);
+      ConsumerKeyboard.release();
+    }
 
-    Die drei Sekunden Pause geben dir nach einem Neustart Zeit, das Board bei einem problematischen Sketch wieder abzuziehen. Danach startet die USB-Tastaturfunktion.
-
-    ---
-
-    ### Nur einmal pro Tastendruck schreiben
-
-    ```cpp
-    if (jetzt == LOW && vorher == HIGH) {
-      Keyboard.write('x');
+    if (digitalRead(leiserPin) == LOW) {
+      ConsumerKeyboard.press(KEY_VOLUME_DECREMENT);
+      ConsumerKeyboard.release();
     }
     ```
 
-    Der Buchstabe wird nur beim Übergang von losgelassen zu gedrückt gesendet. Das verhindert eine schnelle Wiederholung, solange du den Taster hältst.
+    `KEY_VOLUME_INCREMENT` erhöht und `KEY_VOLUME_DECREMENT` verringert die Systemlautstärke. `release()` lässt die virtuelle Medientaste nach jedem Befehl wieder los.
+
+    Der Sketch fragt beide Taster direkt ab. Es gibt keine Entprellung, keine Zustandsprüfung und keine zusätzliche Pause. Solange ein Taster gedrückt bleibt, werden fortlaufend Lautstärkebefehle gesendet.
 
 !!! note "Zusatzaufgabe"
 
-    Ändere den gesendeten Buchstaben. Teste den Sketch wieder zuerst in einem leeren Textdokument.
+    Ergänze einen dritten Taster und verwende `KEY_MUTE`, um die Tonausgabe stummzuschalten.
