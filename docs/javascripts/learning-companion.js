@@ -23,6 +23,14 @@
       return;
     }
 
+    // Die Startseite zeigt den Fortschritt bereits als grosse Checkliste. Dort
+    // bleibt die rechte Seitenleiste frei, damit der Inhalt die ganze Breite nutzt.
+    if (document.querySelector('.course-checklist')) {
+      inner.querySelector(`#${companionId}`)?.remove();
+      sidebar.setAttribute('hidden', '');
+      return;
+    }
+
     sidebar.removeAttribute('hidden');
 
     let companion = inner.querySelector(`#${companionId}`);

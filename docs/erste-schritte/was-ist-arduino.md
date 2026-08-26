@@ -15,7 +15,7 @@ Es gibt eine Vielzahl unterschiedlicher Boards für verschiedene Einsatzzwecke. 
 
 * **[Arduino Uno:](https://docs.arduino.cc/hardware/uno-rev3/){ target="_blank" }** Der Standard für den Einstieg. Robust, einfach zu bedienen und ideal zum Lernen der Grundlagen.
 * **[Arduino Nano:](https://docs.arduino.cc/hardware/nano/){ target="_blank" }** Bietet fast die gleichen Funktionen wie der Uno, ist aber extrem klein und passt direkt auf ein Steckbrett (Breadboard).
-* **[Arduino Mega 2560:](https://docs.arduino.cc/hardware/mega-2560/){ target="_blank" }**** Der „große Bruder“ mit besonders vielen Pins für komplexe Projekte mit vielen Bauteilen.
+* **[Arduino Mega 2560:](https://docs.arduino.cc/hardware/mega-2560/){ target="_blank" }** Der „große Bruder“ mit besonders vielen Pins für komplexe Projekte mit vielen Bauteilen.
 
 ### **Spezial- & Leistungsstarke Boards**
 
