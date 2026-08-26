@@ -15,7 +15,7 @@ Jeder normale Arduino-Sketch hat einen Startteil und einen Wiederholungsteil. `s
 ## Beispielcode
 
 ```cpp
-const int ledPin = 9;
+const int ledPin = LED_BUILTIN;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
@@ -35,7 +35,7 @@ void loop() {
 
 ## Code-Erklärung
 
-Beim Einschalten leuchtet die LED zuerst einmal für 1,5 Sekunden. Dieses lange Leuchten steht in `setup()` und passiert deshalb nur einmal.
+Beim Einschalten leuchtet die eingebaute orange LED des Nano R4 zuerst einmal für 1,5 Sekunden. Dieses lange Leuchten steht in `setup()` und passiert deshalb nur einmal.
 
 Danach beginnt `loop()`: Die LED leuchtet kurz und bleibt danach länger dunkel. Dieses Muster wiederholt sich ohne Ende.
 

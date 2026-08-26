@@ -1,6 +1,6 @@
 # ✨ Erster Sketch
 
-Dein erster Sketch bringt eine LED zum Blinken. Dabei lernst du den ganzen Ablauf kennen: aufbauen, Code schreiben, überprüfen, hochladen und testen.  
+Dein erster Sketch bringt die eingebaute orange LED des Nano R4 zum Blinken. Dafür brauchst du noch keine zusätzlichen Bauteile. Dabei lernst du den ganzen Ablauf kennen: Code schreiben, überprüfen, hochladen und testen.
 Folge immer diesem Muster, wenn du einen neuen Code schreibst.
 
 ## Vorgehen
@@ -12,7 +12,7 @@ Folge immer diesem Muster, wenn du einen neuen Code schreibst.
 ## Code Blinklicht
 
 ```cpp
-const int ledPin = 9;
+const int ledPin = LED_BUILTIN;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
@@ -30,7 +30,7 @@ void loop() {
 
 ### Vorbereitung
 
-`const int ledPin = 9;` gibt Pin 9 den Namen `ledPin`. So ist später leichter zu erkennen, welches Bauteil gemeint ist.
+`const int ledPin = LED_BUILTIN;` speichert den vom Boardpaket festgelegten Pin der eingebauten LED unter dem Namen `ledPin`. Der Sketch bleibt dadurch eindeutig für den Nano R4.
 
 ### Einmaliger Start
 

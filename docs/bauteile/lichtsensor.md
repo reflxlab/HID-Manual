@@ -2,9 +2,9 @@
 
 Ein Lichtsensor misst, wie hell es an seinem Standort ist. Er gibt dafür eine veränderliche Spannung aus, die der Arduino als Zahl einlesen kann.
 
-!!! warning "TODO: Versorgungsspannung festlegen"
+!!! warning "Versorgungsspannung prüfen"
 
-    Prüfe vor dem Unterricht, auf welche Spannung das Board eingestellt ist und welcher Messbereich für den Mikrocontroller vorgesehen ist.
+    Die normalen Pins des Nano R4 arbeiten mit 5 V. Verwende nur einen Sensor oder Spannungsteiler, dessen Ausgang zwischen 0 und 5 V bleibt. Ein reines 3,3-V-Modul darf nur dann an 5 V angeschlossen werden, wenn sein Datenblatt dies ausdrücklich erlaubt.
 
 ---
 
@@ -57,7 +57,7 @@ void loop() {
     int messwert = analogRead(sensorPin);
     ```
 
-    `analogRead()` misst die Spannung des Lichtsensors. Beim ATmega32U4 liegt der Messwert normalerweise im Bereich von `0` bis `1023`.
+    `analogRead()` misst die Spannung des Lichtsensors. Beim Nano R4 liegt der Messwert mit der voreingestellten 10-Bit-Auflösung im Bereich von `0` bis `1023`.
 
     Ob ein grösserer Wert heller oder dunkler bedeutet, hängt vom verwendeten Sensormodul ab. Teste es, indem du den Sensor abdeckst und wieder freilegst.
 

@@ -20,13 +20,19 @@ Es gibt eine Vielzahl unterschiedlicher Boards für verschiedene Einsatzzwecke. 
 ### **Spezial- & Leistungsstarke Boards**
 
 * **ESP32 / ESP8266:** Sehr beliebte Dritthersteller-Boards mit integriertem WLAN und Bluetooth für IoT-Projekte (Internet of Things).
-* **Boards mit ATmega32U4 (z. B. Leonardo, Pro Micro):** Können sich direkt als USB-Eingabegerät (HID) wie eine Tastatur oder Maus am PC ausgeben.
+* **Boards mit USB-HID:** Können sich direkt als Eingabegerät wie eine Tastatur oder Maus am Computer anmelden. Dazu gehört auch der Nano R4 aus diesem Kurs.
 
 ---
 
 ### Das Board in diesem Kurs
 
-Auf dem Board sitzt der Mikrocontroller. In diesem Kurs verwenden wir voraussichtlich ein **SparkFun Qwiic Pro Micro USB-C mit ATmega32U4**, das sich dank seiner USB-Funktion auch als Tastatur oder Maus ausgeben kann.
+In diesem Kurs verwenden wir den **[Arduino Nano R4](https://docs.arduino.cc/hardware/nano-r4/){ target="_blank" }**. Auf ihm arbeitet ein **Renesas RA4M1**, ein 32-Bit-Arm-Cortex-M4-Mikrocontroller mit 48 MHz. Das Board wird über USB-C programmiert und kann sich als USB-Tastatur oder USB-Maus ausgeben.
+
+Der Nano R4 arbeitet an seinen normalen Ein- und Ausgängen mit **5 V**. Er besitzt acht analoge Eingänge, einen Qwiic-Anschluss für I²C-Sensoren und eine eingebaute orange LED. Verwende an einem einzelnen digitalen Pin höchstens **8 mA** und schliesse LEDs immer mit einem passenden Vorwiderstand an.
+
+!!! info "Qwiic-Anschluss"
+
+    Der Qwiic-Anschluss stellt 3,3 V bereit und übersetzt die I²C-Signale passend. Die normalen Pins des Nano R4 arbeiten dagegen mit 5-V-Logik. Prüfe bei jedem Modul, an welchen Anschluss und an welche Spannung es gehört.
 
 ---
 

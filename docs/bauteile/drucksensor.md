@@ -2,9 +2,9 @@
 
 Ein druckabhängiger Widerstand verändert seinen elektrischen Widerstand, wenn du auf ihn drückst. Der Arduino kann diese Veränderung als analogen Messwert erfassen.
 
-!!! warning "TODO: Sensortyp und Kalibrierung prüfen"
+!!! warning "Sensortyp und Kalibrierung prüfen"
 
-    Dieser Entwurf nimmt einen einfachen FSR-Sensor an. Der echte Sensortyp, die sichere maximale Belastung und die sinnvolle Kalibrierung müssen vor dem Unterricht geprüft werden.
+    Dieser Entwurf nimmt einen einfachen FSR-Sensor in einem Spannungsteiler an. Der Nano R4 misst an A1 Spannungen von 0 bis 5 V. Der echte Sensortyp, der zweite Widerstand, die sichere maximale Belastung und die sinnvolle Kalibrierung müssen vor dem Unterricht geprüft werden.
 
 ---
 

@@ -1,6 +1,6 @@
 # 📖 Arduino-Libraries installieren
 
-Libraries erweitern die Arduino IDE um zusätzliche Funktionen. Sie werden zum Beispiel benötigt, um bestimmte Sensoren, Displays, Kommunikationsmodule oder HID-Funktionen einfacher im eigenen Programm verwenden zu können.
+Libraries erweitern die Arduino IDE um zusätzliche Funktionen. Sie werden zum Beispiel benötigt, um bestimmte Sensoren, Displays oder Kommunikationsmodule einfacher im eigenen Programm verwenden zu können. Die HID-Bibliotheken `Keyboard` und `Mouse` sind beim Arduino Nano R4 bereits im Boardpaket enthalten und müssen nicht separat installiert werden.
 
 ## Library über den Library Manager installieren
 

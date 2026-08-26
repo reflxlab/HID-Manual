@@ -12,7 +12,7 @@ In diesem Beispiel wird der interne Pull-up-Widerstand verwendet. Deshalb gilt i
 
 ## Beispielcode
 
-Der Taster ist zwischen D4 und GND angeschlossen, die LED an D9. Solange der Taster gedrückt ist, leuchtet die LED.
+Der Taster ist zwischen D4 und GND angeschlossen. Verbinde die LED von D9 über einen **470-Ω-Vorwiderstand** mit GND. Solange der Taster gedrückt ist, leuchtet die LED.
 
 ```cpp
 const int buttonPin = 4;

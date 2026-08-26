@@ -1,6 +1,6 @@
 # ⌨️ PC-Makropad
 
-Ein Makropad ist eine kleine Tastatur mit frei programmierbaren Tasten. In diesem Beispiel senden drei Taster die häufigen Befehle Kopieren, Einfügen und Rückgängig.
+Der Nano R4 wird über USB-C zu einer kleinen Tastatur mit frei programmierbaren Tasten. In diesem Beispiel senden drei Taster die häufigen Befehle Kopieren, Einfügen und Rückgängig.
 
 ## Aufbau / Anschlüsse
 
@@ -11,8 +11,8 @@ Ein Makropad ist eine kleine Tastatur mit frei programmierbaren Tasten. In diese
 | Taster 3 | D6 | Rückgängig |
 | Jeweils zweite Tasterseite | GND | Gemeinsame Masse |
 
-!!! warning "TODO: Betriebssystem und Tastaturlayout"
-    Der Code verwendet `Ctrl` und passt damit vorläufig zu Windows und vielen Linux-Programmen. Für macOS muss meistens die Command-Taste verwendet werden; prüfe ausserdem die gewünschten Programme und das Tastaturlayout.
+!!! warning "Betriebssystem und Tastaturlayout"
+    Der Code verwendet `Ctrl` und ein deutschsprachiges QWERTZ-Layout. Damit passt er zu Windows und vielen Linux-Programmen. Für macOS muss meistens `KEY_LEFT_GUI` statt `KEY_LEFT_CTRL` verwendet werden. Teste die Kombinationen zuerst in einem unwichtigen Dokument.
 
 ## Beispielcode
 
@@ -34,7 +34,8 @@ void setup() {
     pinMode(buttonPins[i], INPUT_PULLUP);
   }
 
-  Keyboard.begin();
+  delay(3000);
+  Keyboard.begin(KeyboardLayout_de_DE);
 }
 
 void loop() {
@@ -58,6 +59,8 @@ void loop() {
 
 - Zwei Arrays speichern die drei Pins und die drei vorherigen Tasterzustände.
 - Die Funktion `sendeMakro()` drückt zuerst `Ctrl`, danach den Buchstaben und lässt am Ende alle Tasten los.
+- Die drei Sekunden Startpause geben dir Zeit, den Nano R4 bei einem fehlerhaften HID-Sketch wieder abzuziehen.
+- `KeyboardLayout_de_DE` sorgt bei den Buchstaben für die übliche QWERTZ-Zuordnung. Bei einem anderen Betriebssystem-Layout musst du die Makros testen.
 - In der Schleife steht `i` nacheinander für Taster 0, 1 und 2.
 - Ein Makro wird nur beim Übergang von `HIGH` zu `LOW` ausgelöst.
 

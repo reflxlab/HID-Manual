@@ -6,6 +6,18 @@ Im Gegensatz zu einer normalen LED-Bar benötigt die NeoPixel-Bar **nur einen ei
 
 In diesem Beispiel wird der **Adafruit NeoPixel Stick mit 8 RGB-LEDs** verwendet.
 
+## Aufbau / Anschlüsse
+
+| NeoPixel-Bar | Nano R4 |
+|---|---|
+| 5V / VCC | 5V |
+| GND | GND |
+| DIN | D6 über einen 330-Ω-Widerstand |
+
+!!! warning "Stromversorgung"
+
+    Der Datenpin steuert die LEDs nur; er versorgt sie nicht mit Strom. Lasse `setBrightness(50)` für diesen Versuch aktiv. Für mehr oder hellere NeoPixels brauchst du eine passende externe 5-V-Versorgung und eine gemeinsame GND-Verbindung mit dem Nano R4.
+
 ---
 
 ## Benötigte Library installieren

@@ -7,7 +7,7 @@ hide:
 
   <section class="home-hero" aria-labelledby="home-title">
     <div class="home-hero__content">
-      <p class="home-eyebrow"><span aria-hidden="true">✦</span> Qwiic Pro Micro · Interaktiver Lernkurs</p>
+      <p class="home-eyebrow"><span aria-hidden="true">✦</span> Arduino Nano R4 · Interaktiver Lernkurs</p>
       <h1 id="home-title">Baue dein eigenes <span>PC-Interface.</span></h1>
       <p class="home-hero__lead">Lerne Schritt für Schritt, wie du Eingaben misst, Ausgaben steuerst und aus wenigen Bauteilen eine eigene Computersteuerung entwickelst.</p>
 

@@ -1,6 +1,6 @@
 # 🎮 Mini-Gamecontroller
 
-Vier Taster werden zu den Pfeiltasten eines kleinen Gamecontrollers. Solange du einen Taster hältst, bleibt die passende virtuelle Taste am Computer gedrückt.
+Der Nano R4 meldet sich über USB-C als Tastatur an. Vier Taster werden dadurch zu den Pfeiltasten eines kleinen Gamecontrollers. Solange du einen Taster hältst, bleibt die passende virtuelle Taste am Computer gedrückt.
 
 ## Aufbau / Anschlüsse
 
@@ -12,7 +12,7 @@ Vier Taster werden zu den Pfeiltasten eines kleinen Gamecontrollers. Solange du 
 | Rechts | D7 |
 | Jeweils zweite Tasterseite | GND |
 
-!!! warning "TODO: Spiel und Tastenbelegung prüfen"
+!!! warning "Spiel und Tastenbelegung prüfen"
     Teste den Controller zuerst in einem einfachen Tastatur-Test oder Textprogramm. Prüfe danach, ob das ausgewählte Spiel Pfeiltasten unterstützt und ob gleichzeitig gedrückte Richtungen sinnvoll behandelt werden.
 
 ## Beispielcode
@@ -35,6 +35,7 @@ void setup() {
     pinMode(buttonPins[i], INPUT_PULLUP);
   }
 
+  delay(3000);
   Keyboard.begin();
 }
 
@@ -60,6 +61,7 @@ void loop() {
 ## Code-Erklärung
 
 - `buttonPins[]` und `keyCodes[]` gehören positionsweise zusammen.
+- Die drei Sekunden Startpause geben dir Zeit, den Nano R4 bei einem fehlerhaften HID-Sketch wieder abzuziehen.
 - Beim Drücken wird `Keyboard.press()` aufgerufen.
 - Beim Loslassen folgt `Keyboard.release()`.
 - Im Gegensatz zu `Keyboard.write()` kann eine Taste dadurch länger gehalten werden.

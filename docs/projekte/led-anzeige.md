@@ -2,16 +2,16 @@
 
 Eine LED-Bar zeigt die Stellung eines Potentiometers als Balken an. Das Projekt verbindet eine analoge Eingabe mit mehreren digitalen Ausgaben.
 
-!!! warning "TODO: Hardwareumfang prüfen"
+!!! warning "Passende Hardware verwenden"
     Der Entwurf verwendet fünf einzelne LEDs. Falls eine andere LED-Bar vorhanden ist, müssen Pins, Vorwiderstände und möglicherweise eine Bibliothek angepasst werden.
 
 ## Aufbau / Anschlüsse
 
 | Bauteil | Verbindung |
 |---|---|
-| Potentiometer | VCC, A0 und GND |
+| Potentiometer | 5V, A0 und GND |
 | LED 1 bis 5 | D4, D5, D6, D9 und D10 |
-| Jede LED | Eigener Vorwiderstand und danach GND |
+| Jede LED | Eigener 470-Ω-Vorwiderstand und danach GND |
 
 ## Beispielcode
 
@@ -47,6 +47,7 @@ void loop() {
 - Die `for`-Schleife besucht jedes Segment der Anzeige.
 - Ist die Segmentnummer kleiner als der Balkenwert, wird es eingeschaltet.
 - Der Sketch steuert zunächst nur die Anzeige und verändert noch nicht die echte Computerlautstärke.
+- Die 470-Ω-Widerstände halten den Strom jedes Nano-R4-Ausgangs unter 8 mA.
 
 ## Mitmach-Aufgabe
 

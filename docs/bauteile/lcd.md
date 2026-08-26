@@ -1,12 +1,21 @@
 # 🖥️ LCD
 
-Ein LCD kann Text und Zahlen anzeigen, ohne dass der Computer geöffnet sein muss. In diesem Entwurf verwenden wir vorläufig ein zweizeiliges I²C-LCD mit 16 Zeichen pro Zeile.
+Ein LCD kann Text und Zahlen anzeigen, ohne dass der Computer geöffnet sein muss. In diesem Entwurf verwenden wir ein zweizeiliges 5-V-I²C-LCD mit 16 Zeichen pro Zeile am normalen I²C-Anschluss des Nano R4.
 
-!!! warning "TODO: Display, Adresse und Spannung prüfen"
+!!! warning "Display, Adresse und Spannung prüfen"
 
     Der Beispielcode nimmt ein **16×2-I²C-LCD**, die Library `LiquidCrystal_I2C` und die Adresse `0x27` an.
 
-    Vor der Veröffentlichung müssen Modell, Library, I²C-Adresse und Betriebsspannung mit dem echten Display geprüft werden.
+    Prüfe Modell, Library, I²C-Adresse und Betriebsspannung am echten Display. Ein 3,3-V-Qwiic-Display gehört an den Qwiic-Anschluss und benötigt möglicherweise `Wire1` statt `Wire`.
+
+## Aufbau / Anschlüsse
+
+| LCD-Anschluss | Nano R4 |
+|---|---|
+| VCC | 5V |
+| GND | GND |
+| SDA | A4 / SDA |
+| SCL | A5 / SCL |
 
 ---
 

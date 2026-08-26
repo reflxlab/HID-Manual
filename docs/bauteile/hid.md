@@ -1,119 +1,89 @@
 # 🖱️ HID-Steuerungen
 
-HID steht für **Human Interface Device**. Damit kann sich das Qwiic Pro Micro mit ATmega32U4 über USB zum Beispiel als Tastatur, Maus oder Mediensteuerung am Computer anmelden.
+HID steht für **Human Interface Device**. Der Arduino Nano R4 kann sich über seine native USB-C-Verbindung als Tastatur oder Maus am Computer anmelden. Die dafür benötigten Bibliotheken `Keyboard` und `Mouse` sind bereits im Boardpaket **Arduino UNO R4 Boards** enthalten.
 
-In diesem Beispiel steuern zwei Taster die Lautstärke des Computers: Einer macht **lauter**, der andere **leiser**.
-
----
-
-## Benötigte Library installieren
-
-Für die HID-Funktionen wird die Library **HID-Project** von NicoHood benötigt.
-
-Folge der [Anleitung](../erste-schritte/installLibrary.md) und installiere die **HID-Project** Library.
+In diesem ersten Beispiel schreibt ein Taster einmal den Buchstaben `x`. So lernst du die HID-Funktion kennen, bevor du vollständige Makros oder Mediensteuerungen baust.
 
 !!! info "HID-Code vorsichtig testen"
 
-    Ein fehlerhafter Sketch kann sehr viele Befehle senden und die Bedienung des Computers stören.
+    Öffne vor dem Test ein leeres Textdokument und speichere deine Arbeit in anderen Programmen. Ein fehlerhafter Sketch kann sehr viele Eingaben senden. Ziehe im Notfall das USB-Kabel ab.
 
 ---
 
+## Aufbau
+
+Schliesse einen Taster zwischen **D4** und **GND** an. Der interne Pull-up-Widerstand des Nano R4 sorgt dafür, dass kein zusätzlicher Widerstand nötig ist.
 
 ## Beispielcode
 
-Schliesse einen Taster zwischen **D4** und **GND** an. Er macht die Lautstärke lauter. Den zweiten Taster schliesst du zwischen **D5** und **GND** an; er macht sie leiser.
-
-Bei einem Tastendruck wird der passende Medienbefehl gesendet. Das kurze `delay(150)` danach sorgt dafür, dass ein mechanisches Prellen nicht sofort mehrere Befehle auslöst.
-
 ```cpp
-#include <HID-Project.h>
+#include <Keyboard.h>
 
-const int lauterPin = 4;
-const int leiserPin = 5;
+const int buttonPin = 4;
+bool vorher = HIGH;
 
 void setup() {
-  pinMode(lauterPin, INPUT_PULLUP);
-  pinMode(leiserPin, INPUT_PULLUP);
-  Consumer.begin();
+  pinMode(buttonPin, INPUT_PULLUP);
+
+  delay(3000);
+  Keyboard.begin();
 }
 
 void loop() {
-  if (digitalRead(lauterPin) == LOW) {
-    Consumer.write(MEDIA_VOLUME_UP);
-    delay(150);
+  bool jetzt = digitalRead(buttonPin);
+
+  if (jetzt == LOW && vorher == HIGH) {
+    Keyboard.write('x');
   }
 
-  if (digitalRead(leiserPin) == LOW) {
-    Consumer.write(MEDIA_VOLUME_DOWN);
-    delay(150);
-  }
+  vorher = jetzt;
+  delay(20);
 }
 ```
 
 ??? info "Code-Erklärung"
 
-    ### Library einbinden
+    ### Eingebaute Tastatur-Bibliothek einbinden
 
     ```cpp
-    #include <HID-Project.h>
+    #include <Keyboard.h>
     ```
 
-    Bindet die zuvor installierte **HID-Project Library** in das Programm ein.
+    `Keyboard.h` gehört zum offiziellen Nano-R4-Boardpaket. Es muss keine zusätzliche HID-Library installiert werden.
 
     ---
 
-    ### Tasterpins speichern
+    ### Taster vorbereiten
 
     ```cpp
-    const int lauterPin = 4;
-    const int leiserPin = 5;
+    pinMode(buttonPin, INPUT_PULLUP);
     ```
 
-    `lauterPin` legt den Eingang für den Lauter-Taster fest, `leiserPin` den Eingang für den Leiser-Taster.
+    `INPUT_PULLUP` aktiviert den internen Pull-up-Widerstand. Deshalb gilt: **gedrückt = `LOW`**, **losgelassen = `HIGH`**.
 
     ---
 
-    ### Eingänge und Mediensteuerung starten
+    ### HID sicher starten
 
     ```cpp
-    pinMode(lauterPin, INPUT_PULLUP);
-    pinMode(leiserPin, INPUT_PULLUP);
-    Consumer.begin();
+    delay(3000);
+    Keyboard.begin();
     ```
 
-    `INPUT_PULLUP` aktiviert den internen Pull-up-Widerstand des Mikrocontrollers. Deshalb gilt im Programm: **gedrückt = `LOW`** und **losgelassen = `HIGH`**.
-
-    `Consumer.begin()` startet die Mediensteuerung der HID-Project Library.
+    Die drei Sekunden Pause geben dir nach einem Neustart Zeit, das Board bei einem problematischen Sketch wieder abzuziehen. Danach startet die USB-Tastaturfunktion.
 
     ---
 
-    ### Lauter-Taster abfragen
+    ### Nur einmal pro Tastendruck schreiben
 
     ```cpp
-    if (digitalRead(lauterPin) == LOW) {
-      Consumer.write(MEDIA_VOLUME_UP);
-      delay(150);
+    if (jetzt == LOW && vorher == HIGH) {
+      Keyboard.write('x');
     }
     ```
 
-    Ist der Lauter-Taster gedrückt, ist sein Eingang `LOW`. Dann sendet `MEDIA_VOLUME_UP` einen Schritt lauter an den Computer.
-
-    Das kurze `delay(150)` danach ist eine einfache Entprellung. Hältst du den Taster gedrückt, wird die Lautstärke ungefähr alle 150 Millisekunden weiter verändert.
-
-    ---
-
-    ### Leiser-Taster abfragen
-
-    ```cpp
-    if (digitalRead(leiserPin) == LOW) {
-      Consumer.write(MEDIA_VOLUME_DOWN);
-      delay(150);
-    }
-    ```
-
-    Dieser Block funktioniert gleich wie der Lauter-Block, sendet aber mit `MEDIA_VOLUME_DOWN` einen Schritt leiser.
-
+    Der Buchstabe wird nur beim Übergang von losgelassen zu gedrückt gesendet. Das verhindert eine schnelle Wiederholung, solange du den Taster hältst.
 
 !!! note "Zusatzaufgabe"
 
-    Ändere `delay(150)` auf `delay(250)`. Wie verändert sich die Geschwindigkeit, wenn du einen Taster gedrückt hältst?
+    Ändere den gesendeten Buchstaben. Teste den Sketch wieder zuerst in einem leeren Textdokument.
