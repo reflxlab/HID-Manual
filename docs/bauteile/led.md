@@ -2,7 +2,6 @@
 
 Eine LED wandelt elektrischen Strom in Licht um. Sie kann über einen digitalen Ausgang ein- und ausgeschaltet werden.
 
----
 
 ## Beispielcode
 

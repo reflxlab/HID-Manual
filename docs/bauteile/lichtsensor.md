@@ -6,7 +6,6 @@ Ein Lichtsensor misst, wie hell es an seinem Standort ist. Er gibt dafür eine v
 
     Die normalen Pins des Nano R4 arbeiten mit 5 V. Verwende nur einen Sensor oder Spannungsteiler, dessen Ausgang zwischen 0 und 5 V bleibt. Ein reines 3,3-V-Modul darf nur dann an 5 V angeschlossen werden, wenn sein Datenblatt dies ausdrücklich erlaubt.
 
----
 
 ## Beispielcode
 

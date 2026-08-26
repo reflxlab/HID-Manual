@@ -8,7 +8,6 @@ Ein LCD kann Text und Zahlen anzeigen, ohne dass der Computer geöffnet sein mus
 
     Prüfe Modell, Library, I²C-Adresse und Betriebsspannung am echten Display.
 
----
 
 ## Benötigte Library installieren
 
@@ -16,7 +15,6 @@ Für die Ansteuerung des LCDs wird eine **LiquidCrystal_I2C** Library benötigt.
 
 Folge der [Anleitung](../erste-schritte/installLibrary.md) und installiere die für das verwendete Display passende **LiquidCrystal_I2C** Library.
 
----
 
 ## Beispielcode
 

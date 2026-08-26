@@ -8,7 +8,6 @@ In diesem Beispiel wird der interne Pull-up-Widerstand verwendet. Deshalb gilt i
 
     Bei vielen Steckbrett-Tastern sind jeweils zwei Beine auf derselben Seite schon intern verbunden. Prüfe die Ausrichtung am echten Taster oder mit einem Multimeter.
 
----
 
 ## Beispielcode
 
@@ -68,6 +67,6 @@ void loop() {
     `digitalRead()` liest den Taster. Ist er gedrückt, wird die LED mit `HIGH` eingeschaltet. In allen anderen Fällen schaltet `else` die LED mit `LOW` aus.
 
 
-!!! info "Aufgabe"
+!!! note "Zusatzaufgabe"
 
     Ändere den Sketch so, dass die LED leuchtet, wenn der Taster **nicht** gedrückt ist.

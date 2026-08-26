@@ -6,15 +6,12 @@ Im Gegensatz zu einer normalen LED-Bar benötigt die NeoPixel-Bar **nur einen ei
 
 In diesem Beispiel wird der **Adafruit NeoPixel Stick mit 8 RGB-LEDs** verwendet.
 
----
 
 ## Benötigte Library installieren
 
 Für die Ansteuerung der LED-Bar wird die Library **Adafruit NeoPixel** benötigt.  
   
 Folge der [Anleitung](../erste-schritte/installLibrary.md) und installiere die **Adafruit NeoPixel** Library.
-
----
 
 ## Beispielcode
 

@@ -9,7 +9,6 @@ Für die Ansteuerung des LCDs wird eine **ConsumerKeyboard** Library benötigt.
 
 Folge der [Anleitung](../erste-schritte/installLibrary.md) und installiere die für das verwendete Display passende **ConsumerKeyboard** Library.
 
----
 
 
 ## Beispielcode
