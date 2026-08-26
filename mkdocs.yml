@@ -56,6 +56,7 @@ nav:
   - ✔️ Checkliste: index.md
   - 🚀 Erste Schritte:
       - Was ist Arduino?: erste-schritte/was-ist-arduino.md
+      - Arduino Nano R4: erste-schritte/arduino-nano-r4.md
       - Arduino IDE einrichten: erste-schritte/ide-einrichten.md
       - setup() und loop(): erste-schritte/setup-loop.md
       - Erster Sketch: erste-schritte/erster-sketch.md
