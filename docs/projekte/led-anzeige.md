@@ -41,15 +41,60 @@ void loop() {
 }
 ```
 
-## Code-Erklärung
+??? info "Code-Erklärung"
 
-- Der Potentiometerwert wird in eine Anzahl leuchtender LEDs umgerechnet.
-- Die `for`-Schleife besucht jedes Segment der Anzeige.
-- Ist die Segmentnummer kleiner als der Balkenwert, wird es eingeschaltet.
-- Der Sketch steuert zunächst nur die Anzeige und verändert noch nicht die echte Computerlautstärke.
-- Die 470-Ω-Widerstände halten den Strom jedes Nano-R4-Ausgangs unter 8 mA.
+    ### Pins und Anzahl der LEDs festlegen
 
-## Mitmach-Aufgabe
+    ```cpp
+    const int potPin = A0;
+    const int ledPins[] = {4, 5, 6, 9, 10};
+    const int anzahlLeds = 5;
+    ```
 
-!!! info "Mitmach-Aufgabe"
+    `potPin` bezeichnet den Eingang des Potentiometers. Im Array `ledPins[]` stehen die fünf LED-Pins. `anzahlLeds` wird später als Schleifengrenze verwendet.
+
+    ---
+
+    ### LED-Pins als Ausgänge einstellen
+
+    ```cpp
+    for (int i = 0; i < anzahlLeds; i++) {
+      pinMode(ledPins[i], OUTPUT);
+    }
+    ```
+
+    Die `for`-Schleife besucht jeden Eintrag des Arrays und richtet den zugehörigen Pin als Ausgang ein. Jede LED benötigt einen eigenen 470-Ω-Vorwiderstand.
+
+    ---
+
+    ### Messwert in einen Balken umrechnen
+
+    ```cpp
+    int lautstaerke = analogRead(potPin);
+    int balken = map(lautstaerke, 0, 1023, 0, anzahlLeds + 1);
+    balken = constrain(balken, 0, anzahlLeds);
+    ```
+
+    `analogRead()` liest die Stellung des Potentiometers. `map()` berechnet daraus die Anzahl der leuchtenden LEDs. `constrain()` begrenzt das Ergebnis sicher auf `0` bis `5`.
+
+    ---
+
+    ### LEDs ein- und ausschalten
+
+    ```cpp
+    for (int i = 0; i < anzahlLeds; i++) {
+      if (i < balken) {
+        digitalWrite(ledPins[i], HIGH);
+      } else {
+        digitalWrite(ledPins[i], LOW);
+      }
+    }
+    ```
+
+    Die Schleife prüft jede LED. Ist ihre Position kleiner als der Balkenwert, wird sie eingeschaltet. Alle übrigen LEDs werden ausgeschaltet.
+
+    Der Sketch zeigt nur die Potentiometerstellung an und verändert die tatsächliche Computerlautstärke noch nicht.
+
+!!! note "Zusatzaufgabe"
+
     Lass die letzte LED blinken, wenn der Messwert grösser als `950` ist. Die anderen LEDs sollen in diesem Bereich weiterhin leuchten.

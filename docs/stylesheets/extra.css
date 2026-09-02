@@ -14,24 +14,6 @@
   --course-shadow-md: 0 1rem 2.8rem rgb(5 68 71 / 13%);
 }
 
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color: #007f84;
-  --md-primary-fg-color--light: #14a6aa;
-  --md-primary-fg-color--dark: #006267;
-  --md-accent-fg-color: #e7612d;
-  --md-typeset-a-color: #007a7f;
-  --course-page: #f5faf9;
-  --course-surface: #ffffff;
-  --course-surface-soft: #edf7f6;
-  --course-surface-raised: rgb(255 255 255 / 88%);
-  --course-border: rgb(0 106 111 / 14%);
-  --course-border-strong: rgb(0 106 111 / 24%);
-  --course-text: #163c3e;
-  --course-muted: #5e7475;
-  --course-success: #238451;
-  --course-code-bg: #0b2d31;
-}
-
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color: #007f84;
   --md-primary-fg-color--light: #20b8bb;
@@ -631,14 +613,6 @@ body {
 .code-window .md-clipboard,
 .code-window .md-code__nav {
   display: none !important;
-}
-
-/* Das helle Material-Schema setzt fuer <pre> eine helle Flaeche.
-   Im Hero bleibt das Codefenster bewusst dunkel, damit der Code lesbar ist. */
-[data-md-color-scheme="default"] .md-typeset .code-window pre,
-[data-md-color-scheme="default"] .md-typeset .code-window pre > code {
-  background: var(--course-code-bg) !important;
-  color: #d9f5f0 !important;
 }
 
 .code-keyword {

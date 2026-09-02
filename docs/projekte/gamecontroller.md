@@ -58,16 +58,65 @@ void loop() {
 }
 ```
 
-## Code-Erklärung
+??? info "Code-Erklärung"
 
-- `buttonPins[]` und `keyCodes[]` gehören positionsweise zusammen.
-- Die drei Sekunden Startpause geben dir Zeit, den Nano R4 bei einem fehlerhaften HID-Sketch wieder abzuziehen.
-- Beim Drücken wird `Keyboard.press()` aufgerufen.
-- Beim Loslassen folgt `Keyboard.release()`.
-- Im Gegensatz zu `Keyboard.write()` kann eine Taste dadurch länger gehalten werden.
-- Mehrere Taster können gleichzeitig gedrückt sein, zum Beispiel oben und rechts.
+    ### Pins und Tasten zuordnen
 
-## Mitmach-Aufgabe
+    ```cpp
+    const byte buttonPins[] = {4, 5, 6, 7};
+    const byte keyCodes[] = {
+      KEY_UP_ARROW,
+      KEY_DOWN_ARROW,
+      KEY_LEFT_ARROW,
+      KEY_RIGHT_ARROW
+    };
+    ```
 
-!!! info "Mitmach-Aufgabe"
+    `buttonPins[]` und `keyCodes[]` gehören positionsweise zusammen. Der Taster an Pin 4 steuert deshalb `KEY_UP_ARROW`, der Taster an Pin 5 `KEY_DOWN_ARROW` und so weiter.
+
+    ---
+
+    ### Vorherige Zustände speichern
+
+    ```cpp
+    bool vorher[] = {HIGH, HIGH, HIGH, HIGH};
+    ```
+
+    Das Array speichert für jeden Taster den zuletzt gelesenen Zustand. Zu Beginn sind alle Taster losgelassen und wegen `INPUT_PULLUP` auf `HIGH`.
+
+    ---
+
+    ### Eingänge und Tastatur vorbereiten
+
+    ```cpp
+    for (int i = 0; i < 4; i++) {
+      pinMode(buttonPins[i], INPUT_PULLUP);
+    }
+
+    delay(3000);
+    Keyboard.begin();
+    ```
+
+    Die `for`-Schleife richtet alle vier Pins als Eingänge mit internem Pull-up-Widerstand ein. Die drei Sekunden Startpause geben dir Zeit, den Nano R4 bei einem fehlerhaften HID-Sketch wieder abzuziehen. Danach startet `Keyboard.begin()` die Tastaturfunktion.
+
+    ---
+
+    ### Tasten drücken und loslassen
+
+    ```cpp
+    if (jetzt != vorher[i]) {
+      if (jetzt == LOW) {
+        Keyboard.press(keyCodes[i]);
+      } else {
+        Keyboard.release(keyCodes[i]);
+      }
+
+      vorher[i] = jetzt;
+    }
+    ```
+
+    Nur wenn sich ein Tasterzustand verändert, wird ein HID-Befehl gesendet. Beim Drücken ruft der Sketch `Keyboard.press()` auf, beim Loslassen `Keyboard.release()`. Anders als bei `Keyboard.write()` kann eine Taste so länger gehalten werden. Auch mehrere Richtungen können gleichzeitig aktiv sein.
+
+!!! note "Zusatzaufgabe"
+
     Ergänze einen fünften Taster für die Leertaste. Verwende dieselbe Array-Struktur, statt für den neuen Taster einen komplett getrennten Codeblock zu schreiben.

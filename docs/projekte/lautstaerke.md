@@ -26,11 +26,11 @@ const int potPin = A0;
 int aktuelleStufe = 0;
 
 void setup() {
-  aktuelleStufe = map(analogRead(potPin), 0, 1023, 0, 20);
+  aktuelleStufe = map(analogRead(potPin), 0, 1023, 0, 50);
 }
 
 void loop() {
-  int zielStufe = map(analogRead(potPin), 0, 1023, 0, 20);
+  int zielStufe = map(analogRead(potPin), 0, 1023, 0, 50);
 
   if (zielStufe > aktuelleStufe) {
     ConsumerKeyboard.press(KEY_VOLUME_INCREMENT);
@@ -42,21 +42,71 @@ void loop() {
     aktuelleStufe--;
   }
 
-  delay(80);
+  delay(30);
 }
 ```
 
-## Code-Erklärung
+??? info "Code-Erklärung"
 
-- `ConsumerKeyboard.h` stellt die fertigen Medienbefehle bereit. Es muss kein eigener HID-Report-Deskriptor angelegt werden.
-- `KEY_VOLUME_INCREMENT` erhöht und `KEY_VOLUME_DECREMENT` verringert die Systemlautstärke.
-- Nach jedem `press()` lässt `release()` die virtuelle Medientaste wieder los.
-- `map()` teilt den Potentiometerweg in 21 Stufen von 0 bis 20.
-- Ist das Ziel höher oder tiefer, sendet der Nano R4 jeweils einen Lauter- oder Leiser-Schritt.
-- Der Computer meldet seine echte Lautstärke nicht an den Sketch zurück. Nach einer Änderung am Computer können Reglerstellung und Lautstärke deshalb auseinanderliegen.
+    ### Consumer-Keyboard-Bibliothek einbinden
 
-## Mitmach-Aufgabe
+    ```cpp
+    #include <ConsumerKeyboard.h>
+    ```
 
-!!! info "Mitmach-Aufgabe"
+    `ConsumerKeyboard.h` stellt fertige Medienbefehle bereit. Ein eigener HID-Report-Deskriptor ist nicht nötig.
+
+    ---
+
+    ### Messpin und aktuelle Stufe festlegen
+
+    ```cpp
+    const int potPin = A0;
+    int aktuelleStufe = 0;
+    ```
+
+    `potPin` speichert den analogen Eingang des Potentiometers. `aktuelleStufe` merkt sich, welche Lautstärkestufe zuletzt erreicht wurde.
+
+    ---
+
+    ### Startwert einlesen
+
+    ```cpp
+    aktuelleStufe = map(analogRead(potPin), 0, 1023, 0, 20);
+    ```
+
+    Beim Start wird die Stellung des Potentiometers übernommen. Dadurch sendet der Nano R4 nicht sofort viele Lautstärkebefehle.
+
+    ---
+
+    ### Zielstufe berechnen
+
+    ```cpp
+    int zielStufe = map(analogRead(potPin), 0, 1023, 0, 20);
+    ```
+
+    `analogRead()` liest die aktuelle Reglerstellung. `map()` teilt den Potentiometerweg in 21 Stufen von `0` bis `20`.
+
+    ---
+
+    ### Lautstärke schrittweise ändern
+
+    ```cpp
+    if (zielStufe > aktuelleStufe) {
+      ConsumerKeyboard.press(KEY_VOLUME_INCREMENT);
+      ConsumerKeyboard.release();
+      aktuelleStufe++;
+    } else if (zielStufe < aktuelleStufe) {
+      ConsumerKeyboard.press(KEY_VOLUME_DECREMENT);
+      ConsumerKeyboard.release();
+      aktuelleStufe--;
+    }
+    ```
+
+    Liegt die Zielstufe höher, sendet `KEY_VOLUME_INCREMENT` einen Lauter-Schritt. Liegt sie tiefer, sendet `KEY_VOLUME_DECREMENT` einen Leiser-Schritt. Nach jedem `press()` lässt `release()` die virtuelle Medientaste wieder los.
+
+    Der Computer meldet seine tatsächliche Lautstärke nicht an den Sketch zurück. Nach einer Lautstärkeänderung am Computer können Reglerstellung und Lautstärke deshalb auseinanderliegen.
+
+!!! note "Zusatzaufgabe"
 
     Ändere den Bereich von 20 auf 10 Stufen und vergleiche das Gefühl beim Drehen. Entscheide danach, welche Anzahl Stufen für euren Regler am angenehmsten ist.

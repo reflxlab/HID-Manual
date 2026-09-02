@@ -55,16 +55,65 @@ void loop() {
 }
 ```
 
-## Code-Erklärung
+??? info "Code-Erklärung"
 
-- Zwei Arrays speichern die drei Pins und die drei vorherigen Tasterzustände.
-- Die Funktion `sendeMakro()` drückt zuerst `Ctrl`, danach den Buchstaben und lässt am Ende alle Tasten los.
-- Die drei Sekunden Startpause geben dir Zeit, den Nano R4 bei einem fehlerhaften HID-Sketch wieder abzuziehen.
-- `KeyboardLayout_de_DE` sorgt bei den Buchstaben für die übliche QWERTZ-Zuordnung. Bei einem anderen Betriebssystem-Layout musst du die Makros testen.
-- In der Schleife steht `i` nacheinander für Taster 0, 1 und 2.
-- Ein Makro wird nur beim Übergang von `HIGH` zu `LOW` ausgelöst.
+    ### Tastatur-Bibliothek und Taster festlegen
 
-## Mitmach-Aufgabe
+    ```cpp
+    #include <Keyboard.h>
 
-!!! info "Mitmach-Aufgabe"
+    const byte buttonPins[] = {4, 5, 6};
+    bool vorher[] = {HIGH, HIGH, HIGH};
+    ```
+
+    `Keyboard.h` stellt die Tastaturbefehle bereit. Die beiden Arrays speichern die drei Pins und den jeweils vorherigen Tasterzustand.
+
+    ---
+
+    ### Tastenkombination senden
+
+    ```cpp
+    void sendeMakro(char taste) {
+      Keyboard.press(KEY_LEFT_CTRL);
+      Keyboard.press(taste);
+      delay(20);
+      Keyboard.releaseAll();
+    }
+    ```
+
+    `sendeMakro()` drückt zuerst `Ctrl` und danach den übergebenen Buchstaben. `Keyboard.releaseAll()` lässt am Ende alle virtuellen Tasten wieder los.
+
+    ---
+
+    ### Eingänge und Tastatur vorbereiten
+
+    ```cpp
+    for (int i = 0; i < 3; i++) {
+      pinMode(buttonPins[i], INPUT_PULLUP);
+    }
+
+    delay(3000);
+    Keyboard.begin(KeyboardLayout_de_DE);
+    ```
+
+    Die Schleife richtet alle drei Taster als Eingänge mit internem Pull-up-Widerstand ein. Die drei Sekunden Startpause geben dir Zeit, den Nano R4 bei einem fehlerhaften HID-Sketch wieder abzuziehen. `KeyboardLayout_de_DE` verwendet für Buchstaben die deutsche QWERTZ-Zuordnung.
+
+    ---
+
+    ### Neuen Tastendruck erkennen
+
+    ```cpp
+    if (jetzt == LOW && vorher[i] == HIGH) {
+      if (i == 0) sendeMakro('c');
+      if (i == 1) sendeMakro('v');
+      if (i == 2) sendeMakro('z');
+    }
+
+    vorher[i] = jetzt;
+    ```
+
+    In der Schleife steht `i` nacheinander für Taster 0, 1 und 2. Ein Makro wird nur beim Übergang von `HIGH` zu `LOW` ausgelöst. Anschließend wird der aktuelle Zustand für den nächsten Schleifendurchlauf gespeichert.
+
+!!! note "Zusatzaufgabe"
+
     Ersetze eine Funktion durch eine sichere Tastenkombination, die du oft brauchst. Schreibe vor dem Test auf, was die Kombination im geöffneten Programm auslösen wird.

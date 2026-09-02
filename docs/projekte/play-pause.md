@@ -41,15 +41,63 @@ void loop() {
 }
 ```
 
-## Code-Erklärung
+??? info "Code-Erklärung"
 
-- `ConsumerKeyboard.h` stellt fertige Medienbefehle bereit. Es muss kein eigener HID-Report-Deskriptor angelegt werden.
-- `ConsumerKeyboard.press(KEY_PLAY_PAUSE)` drückt die virtuelle Play/Pause-Taste.
-- `ConsumerKeyboard.release()` lässt die virtuelle Medientaste direkt danach wieder los.
-- Der Taster wird nur beim Übergang von losgelassen zu gedrückt ausgewertet.
+    ### Consumer-Keyboard-Bibliothek einbinden
 
-## Mitmach-Aufgabe
+    ```cpp
+    #include <ConsumerKeyboard.h>
+    ```
 
-!!! info "Mitmach-Aufgabe"
+    `ConsumerKeyboard.h` stellt fertige Medienbefehle bereit. Ein eigener HID-Report-Deskriptor ist nicht nötig.
+
+    ---
+
+    ### Taster und vorherigen Zustand festlegen
+
+    ```cpp
+    const int buttonPin = 4;
+    bool vorherGedrueckt = false;
+    ```
+
+    `buttonPin` speichert den Anschluss des Tasters. `vorherGedrueckt` merkt sich, ob der Taster im letzten Schleifendurchlauf gedrückt war.
+
+    ---
+
+    ### Taster als Eingang vorbereiten
+
+    ```cpp
+    pinMode(buttonPin, INPUT_PULLUP);
+    ```
+
+    Der interne Pull-up-Widerstand sorgt dafür, dass ein gedrückter Taster als `LOW` gelesen wird.
+
+    ---
+
+    ### Neuen Tastendruck erkennen
+
+    ```cpp
+    bool jetztGedrueckt = digitalRead(buttonPin) == LOW;
+
+    if (jetztGedrueckt && !vorherGedrueckt) {
+      ConsumerKeyboard.press(KEY_PLAY_PAUSE);
+      ConsumerKeyboard.release();
+    }
+    ```
+
+    Der Medienbefehl wird nur gesendet, wenn der Taster jetzt gedrückt ist, vorher aber noch nicht gedrückt war. `press()` drückt die virtuelle Play/Pause-Taste und `release()` lässt sie direkt wieder los.
+
+    ---
+
+    ### Zustand speichern und kurz warten
+
+    ```cpp
+    vorherGedrueckt = jetztGedrueckt;
+    delay(20);
+    ```
+
+    Der aktuelle Zustand wird für den nächsten Schleifendurchlauf gespeichert. Die kurze Pause hilft beim Entprellen des Tasters.
+
+!!! note "Zusatzaufgabe"
 
     Ergänze eine LED an D9 mit einem 470-Ω-Vorwiderstand. Sie soll bei jedem gültigen Tastendruck kurz aufblitzen, ohne dass mehrere Play/Pause-Befehle gesendet werden.

@@ -18,23 +18,9 @@ theme:
     - search.highlight
     - content.code.copy         # Fügt den Copy-Button bei Codeblöcken ein!
   palette:
-    # Farbschema für Tag-Modus (Arduino Teal & Orange)
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal            # Typisches Arduino-Türkis
-      accent: deep orange      # Arduino-Orange für Links & Highlights
-      toggle:
-        icon: material/brightness-7
-        name: Zum dunklen Modus wechseln
-
-    # Farbschema für Nacht-Modus
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: teal
-      accent: deep orange
-      toggle:
-        icon: material/brightness-4
-        name: Zum hellen Modus wechseln
+    scheme: slate
+    primary: teal
+    accent: deep orange
 
 # Hier bindest du deine eigene CSS-Datei ein (optional)
 extra_css:
