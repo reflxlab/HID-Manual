@@ -26,21 +26,19 @@ void loop() {
 }
 ```
 
-## Code-Erklärung
+??? info "Code-Erklärung"
 
-### Vorbereitung
+    ### Vorbereitung
 
-`const int ledPin = LED_BUILTIN;` speichert den vom Boardpaket festgelegten Pin der eingebauten LED unter dem Namen `ledPin`. Der Sketch bleibt dadurch eindeutig für den Nano R4.
+    `const int ledPin = LED_BUILTIN;` speichert den vom Boardpaket festgelegten Pin der eingebauten LED unter dem Namen `ledPin`. Der Sketch bleibt dadurch eindeutig für den Nano R4.
 
-### Einmaliger Start
+    ### Einmaliger Start
 
-In `setup()` wird der Pin mit `pinMode()` als Ausgang festgelegt.
+    In `setup()` wird der Pin mit `pinMode()` als Ausgang festgelegt.
 
-### Wiederholung
+    ### Wiederholung
 
-In `loop()` wird die LED eingeschaltet, eine halbe Sekunde gewartet, ausgeschaltet und wieder gewartet. Danach beginnt `loop()` automatisch von vorne.
+    In `loop()` wird die LED eingeschaltet, eine halbe Sekunde gewartet, ausgeschaltet und wieder gewartet. Danach beginnt `loop()` automatisch von vorne.
 
-## Mitmach-Aufgabe
-
-!!! info "Mitmach-Aufgabe"
+!!! note "Zusatzaufgabe"
     Programmiere ein Herzschlag-Muster: zweimal kurz blinken, danach eine längere Pause. Du darfst dafür weitere `digitalWrite()`- und `delay()`-Zeilen ergänzen.

@@ -75,14 +75,14 @@ hide:
         <li>
           <input id="course-step-ide" type="checkbox" data-step="ide">
           <div class="course-checklist__copy">
-            <label for="course-step-ide"><small>Schritt 1</small><strong>Arduino IDE einrichten</strong><span>Installiere die Entwicklungsumgebung und verbinde dein Board.</span></label>
+            <label for="course-step-ide"><small>Schritt 1</small><strong>Arduino IDE einrichten</strong><span>Installiere die Entwicklungsumgebung und verbinde dein Board mit Hilfe der Anleitung rechts.</span></label>
             <a href="erste-schritte/ide-einrichten/">Anleitung öffnen <span aria-hidden="true">→</span></a>
           </div>
         </li>
         <li>
           <input id="course-step-erster-sketch" type="checkbox" data-step="erster-sketch">
           <div class="course-checklist__copy">
-            <label for="course-step-erster-sketch"><small>Schritt 2</small><strong>Ersten Sketch laden</strong><span>Übertrage dein erstes kleines Programm auf den Mikrocontroller. Zeige uns dein Ergebniss, wenn du ferig bist.</span></label>
+            <label for="course-step-erster-sketch"><small>Schritt 2</small><strong>Ersten Sketch laden</strong><span>Verfolge die Anleitung zu deinem ersten Programm, lies die Code-Erklährung und löse die Zusatzaufgabe. Zeige uns dein Ergebniss, wenn du ferig bist.</span></label>
             <a href="erste-schritte/erster-sketch/">Anleitung öffnen <span aria-hidden="true">→</span></a>
           </div>
         </li>
