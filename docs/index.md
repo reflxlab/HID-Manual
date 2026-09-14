@@ -18,7 +18,7 @@ hide:
 
       <dl class="home-stats" aria-label="Kursübersicht">
         <div><dt>5</dt><dd>Lernschritte</dd></div>
-        <div><dt>8</dt><dd>Bauteile</dd></div>
+        <div><dt>9</dt><dd>Bauteile</dd></div>
         <div><dt>5</dt><dd>Projekte</dd></div>
       </dl>
     </div>
@@ -144,6 +144,7 @@ hide:
           <a href="bauteile/lichtsensor/"><span class="component-icon">🌟</span><span><strong>Lichtsensor</strong><small>Helligkeit erkennen</small></span><b aria-hidden="true">→</b></a>
           <a href="bauteile/drucksensor/"><span class="component-icon">👆</span><span><strong>Drucksensor</strong><small>Druckstärke messen</small></span><b aria-hidden="true">→</b></a>
           <a href="bauteile/led-bar/"><span class="component-icon">📊</span><span><strong>LED-Bar</strong><small>Farben und Balken steuern</small></span><b aria-hidden="true">→</b></a>
+          <a href="bauteile/servomotor/"><span class="component-icon">⚙️</span><span><strong>Servomotor</strong><small>Winkel gezielt anfahren</small></span><b aria-hidden="true">→</b></a>
         </nav>
       </article>
 

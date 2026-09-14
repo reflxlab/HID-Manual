@@ -55,6 +55,7 @@ nav:
       - 🖥️ LCD: bauteile/lcd.md
       - 👆 Drucksensor: bauteile/drucksensor.md
       - 🌟 Lichtsensor: bauteile/lichtsensor.md
+      - ⚙️ Servomotor: bauteile/servomotor.md
       - 🖱️ HID Steuerungen: bauteile/hid.md
   - 💻 Programmieren:
       - Variablen: programmieren/variablen.md
