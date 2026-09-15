@@ -2,6 +2,7 @@
 
 Ein Potentiometer ist ein verstellbarer Spannungsteiler. Beim Drehen verändert sich die gemessene Spannung, die der Arduino als Zahl einlesen kann.
 
+
 ## Beispielcode
 
 In diesem Beispiel wird der Messwert des Potentiometers von `0` bis `1023` mit `map()` in Prozent von `0` bis `100` umgerechnet und im seriellen Monitor ausgegeben.

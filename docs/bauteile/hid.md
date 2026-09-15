@@ -3,12 +3,6 @@
 HID steht für **Human Interface Device**. Der Arduino Nano R4 kann sich über USB-C als Mediensteuerung am Computer anmelden. In diesem Beispiel steuern zwei Taster die Systemlautstärke: einer macht lauter, der andere leiser.
 
 
-## Verwendete HID-Library
-
-Für Medienbefehle wird ausschließlich `ConsumerKeyboard.h` verwendet. Du musst keine eigene Library oder zusätzliche Headerdatei anlegen. Falls die Arduino IDE die Library noch nicht findet, aktualisiere zuerst das Boardpaket für den Nano R4.
-
-
-
 ## Beispielcode
 
 ```cpp

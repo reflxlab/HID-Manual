@@ -2,27 +2,13 @@
 
 Ein Servomotor bewegt seine Welle gezielt auf einen Winkel. Anders als ein normaler Motor dreht er nicht einfach ständig weiter: Der Arduino gibt den gewünschten Winkel vor, zum Beispiel `20`, `90` oder `160` Grad.
 
-Für dieses Beispiel eignet sich ein kleiner 5-V-Modellbau-Servo, etwa ein SG90 oder ein vergleichbares Modell.
 
-!!! warning "Servo separat und sicher versorgen"
-
-    Ein Servo kann beim Anlaufen oder unter Last deutlich mehr Strom benötigen als ein Arduino-Pin oder der USB-Anschluss liefern darf. Versorge ihn deshalb mit einem passenden, stabilen **5-V-Netzteil**. Verbinde die Masse (`GND`) des Netzteils mit `GND` des Arduino, damit das Steuersignal funktioniert.
-
-    Prüfe vor dem Einschalten die Farben und die erlaubte Spannung im Datenblatt deines Servos. Entferne den Servoarm beim ersten Test oder halte seinen Bewegungsbereich frei: Der Servo darf nicht gegen einen mechanischen Anschlag fahren.
-
-## Anschliessen
-
-Die Kabelfarben sind bei vielen kleinen Servos gleich, können aber abweichen:
-
-| Servo-Kabel | Anschluss |
-| --- | --- |
-| Signal (meist gelb oder orange) | Digitalpin D9 |
-| Plus (meist rot) | +5 V des externen Netzteils |
-| Masse (meist braun oder schwarz) | GND des externen Netzteils **und** GND des Arduino |
 
 ## Benötigte Library installieren
 
-Der Beispielcode verwendet die Library **Servo**. Suche in der Arduino IDE im Bibliotheksverwalter nach `Servo` und installiere die passende Version, falls sie noch nicht vorhanden ist.
+Für die Ansteuerung des Servomotors wird die Library **Servo** benötigt.
+
+Folge der [Anleitung](../erste-schritte/installLibrary.md) und installiere die **Servo** Library.
 
 ## Beispielcode
 

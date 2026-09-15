@@ -4,10 +4,6 @@ Ein Taster liefert dem Mikrocontroller zwei klar unterscheidbare Zustände: **ge
 
 In diesem Beispiel wird der interne Pull-up-Widerstand verwendet. Deshalb gilt im Programm: **gedrückt = `LOW`** und **losgelassen = `HIGH`**.
 
-!!! warning "Vierbeinigen Taster richtig prüfen"
-
-    Bei vielen Steckbrett-Tastern sind jeweils zwei Beine auf derselben Seite schon intern verbunden. Prüfe die Ausrichtung am echten Taster oder mit einem Multimeter.
-
 
 ## Beispielcode
 
