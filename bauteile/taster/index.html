@@ -1397,10 +1397,6 @@
 <h1 id="taster">🔘 Taster</h1>
 <p>Ein Taster liefert dem Mikrocontroller zwei klar unterscheidbare Zustände: <strong>gedrückt</strong> oder <strong>losgelassen</strong>.</p>
 <p>In diesem Beispiel wird der interne Pull-up-Widerstand verwendet. Deshalb gilt im Programm: <strong>gedrückt = <code>LOW</code></strong> und <strong>losgelassen = <code>HIGH</code></strong>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Vierbeinigen Taster richtig prüfen</p>
-<p>Bei vielen Steckbrett-Tastern sind jeweils zwei Beine auf derselben Seite schon intern verbunden. Prüfe die Ausrichtung am echten Taster oder mit einem Multimeter.</p>
-</div>
 <h2 id="beispielcode">Beispielcode</h2>
 <p>Solange der Taster gedrückt ist, leuchtet die LED.</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buttonPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>

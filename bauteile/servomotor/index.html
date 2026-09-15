@@ -764,17 +764,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#anschliessen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Anschliessen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#benotigte-library-installieren" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1372,17 +1361,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#anschliessen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Anschliessen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#benotigte-library-installieren" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1484,38 +1462,9 @@
 
 <h1 id="servomotor">⚙️ Servomotor</h1>
 <p>Ein Servomotor bewegt seine Welle gezielt auf einen Winkel. Anders als ein normaler Motor dreht er nicht einfach ständig weiter: Der Arduino gibt den gewünschten Winkel vor, zum Beispiel <code>20</code>, <code>90</code> oder <code>160</code> Grad.</p>
-<p>Für dieses Beispiel eignet sich ein kleiner 5-V-Modellbau-Servo, etwa ein SG90 oder ein vergleichbares Modell.</p>
-<div class="admonition warning">
-<p class="admonition-title">Servo separat und sicher versorgen</p>
-<p>Ein Servo kann beim Anlaufen oder unter Last deutlich mehr Strom benötigen als ein Arduino-Pin oder der USB-Anschluss liefern darf. Versorge ihn deshalb mit einem passenden, stabilen <strong>5-V-Netzteil</strong>. Verbinde die Masse (<code>GND</code>) des Netzteils mit <code>GND</code> des Arduino, damit das Steuersignal funktioniert.</p>
-<p>Prüfe vor dem Einschalten die Farben und die erlaubte Spannung im Datenblatt deines Servos. Entferne den Servoarm beim ersten Test oder halte seinen Bewegungsbereich frei: Der Servo darf nicht gegen einen mechanischen Anschlag fahren.</p>
-</div>
-<h2 id="anschliessen">Anschliessen</h2>
-<p>Die Kabelfarben sind bei vielen kleinen Servos gleich, können aber abweichen:</p>
-<table>
-<thead>
-<tr>
-<th>Servo-Kabel</th>
-<th>Anschluss</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Signal (meist gelb oder orange)</td>
-<td>Digitalpin D9</td>
-</tr>
-<tr>
-<td>Plus (meist rot)</td>
-<td>+5 V des externen Netzteils</td>
-</tr>
-<tr>
-<td>Masse (meist braun oder schwarz)</td>
-<td>GND des externen Netzteils <strong>und</strong> GND des Arduino</td>
-</tr>
-</tbody>
-</table>
 <h2 id="benotigte-library-installieren">Benötigte Library installieren</h2>
-<p>Der Beispielcode verwendet die Library <strong>Servo</strong>. Suche in der Arduino IDE im Bibliotheksverwalter nach <code>Servo</code> und installiere die passende Version, falls sie noch nicht vorhanden ist.</p>
+<p>Für die Ansteuerung des Servomotors wird die Library <strong>Servo</strong> benötigt.</p>
+<p>Folge der <a href="../../erste-schritte/installLibrary/">Anleitung</a> und installiere die <strong>Servo</strong> Library.</p>
 <h2 id="beispielcode">Beispielcode</h2>
 <p>In diesem Beispiel fährt der Servo nacheinander drei gut sichtbare Positionen an.</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
